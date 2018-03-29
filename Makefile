@@ -5,11 +5,15 @@
 
 
 CC=gcc
+WARNS = -Wall -Wextra -pedantic -Werror -Wno-unused-parameter
+CFLAGS= $(WARNS) -shared -fPIC
+LIBS = -lcrypt -llua5.1
+INCLUDES= -I/usr/include/lua5.1 
 
 all: libluacrypt.so
 
 libluacrypt.so: luacrypt.c
-	$(CC) -o libluacrypt.so -shared luacrypt.c -llua -lcrypt -Wall
+	$(CC) $(CFLAGS) $(INCLUDES) -o luacrypt.so  luacrypt.c $(LIBS)
 
 install: libluacrypt.so
 	cp libluacrypt.so /usr/lib/
