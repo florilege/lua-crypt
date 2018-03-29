@@ -1,27 +1,20 @@
-luacrypt 1.0 by Alexandre Erwin Ittner <aittner@netuno.com.br>
-Check also: http://users.netuno.com.br/aittner/
-
-
-+ Introduction
-
 luacrypt is a C library that binds the crypt() function from POSIX
-operating systems to the standard Lua 5.0 interpreter.  It is copyright
-Alexandre Erwin Ittner 2004, and is released under the MIT license,
-like Lua (see http://www.lua.org/copyright.html for the full license;
-it's basically the same as the BSD license). There is no warranty.
+operating systems to the standard Lua 5.0 interpreter.
 
 
-+ Installation 
+## Installation 
 
 The Makefile provided with the package will build a shared library called
-'libluacrypt.so', which can be used with 'loadlib()'; The initialization
-function is called 'luaopen_crypt'.
+'libluacrypt.so'
 
+```
+local crypto = require("luacrypt")
+```
 
-+ Usage
+## Usage
 
 The library has only a 'crypt()' function, that makes what you're
-thinking. See 'man crypt' for more information.
+thinking. See `man 3 crypt` for more information.
 
 GNU libc has a extension that allows a md5 based encryption, that are
 more secure than the standard DES one. From the GNU libc manual:
@@ -36,5 +29,6 @@ more secure than the standard DES one. From the GNU libc manual:
     set [a-zA-Z0-9./].  The entire key is significant here (instead of only
     the first 8 bytes)."
 
-The 'crypt.lua' file provides a usage example.
+## Licence
 
+MIT, modified from original (c) Alexandre Erwin Ittner
