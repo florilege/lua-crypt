@@ -1,6 +1,5 @@
 -- Loading the library. libluacrypt.so must be on ld path.
-load_crypt = assert(loadlib("libluacrypt.so", "luaopen_crypt"))
-load_crypt()
+local crypto = require("luacrypt")
 
 -- Checking passwords.
 passwd = crypt("right", "xz")
