@@ -6,9 +6,12 @@
  *
  */
 
-#include <lua.h>
 #define _XOPEN_SOURCE
 #include <unistd.h>
+#include <lua.h>
+#include <lauxlib.h>
+#include <lualib.h>
+#include <crypt.h>
 
 static int mycrypt(lua_State *L)
 {
@@ -41,9 +44,8 @@ static int mycrypt(lua_State *L)
 }
 
 
-int luaopen_crypt(lua_State *L)
+int luaopen_luacrypt(lua_State *L)
 {
     lua_register(L, "crypt", mycrypt);
     return 0;
 }
-
