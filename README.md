@@ -2,7 +2,7 @@ luacrypt is a C library that binds the crypt() function from POSIX
 operating systems to the standard Lua 5.0 interpreter.
 
 
-##Installation 
+## Installation 
 
 The Makefile provided with the package will build a shared library called
 'libluacrypt.so'
@@ -11,7 +11,7 @@ The Makefile provided with the package will build a shared library called
 local crypto = require("luacrypt")
 ```
 
-##Usage
+## Usage
 
 The library has only a 'crypt()' function, that makes what you're
 thinking. See `man 3 crypt` for more information.
@@ -29,6 +29,6 @@ more secure than the standard DES one. From the GNU libc manual:
     set [a-zA-Z0-9./].  The entire key is significant here (instead of only
     the first 8 bytes)."
 
-##Licence
+## Licence
 
 MIT, modified from original (c) Alexandre Erwin Ittner
